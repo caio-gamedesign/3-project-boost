@@ -137,13 +137,15 @@ public class Rocket : MonoBehaviour
 
     private void RespondToRotateInput()
     {
+        float rotation = rcsThrust * Time.deltaTime;
+
         if (Input.GetKey(KeyCode.A))
         {
-            RotateManually(rcsThrust * Time.deltaTime);
+            RotateManually(rotation);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            RotateManually(-rcsThrust * Time.deltaTime);
+            RotateManually(-rotation);
         }
     }
 
